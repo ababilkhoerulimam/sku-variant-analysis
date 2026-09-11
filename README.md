@@ -13,6 +13,14 @@
   </p>
 </div>
 
+## Tech Stack
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?style=for-the-badge&logo=Jupyter&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib&logoColor=black)
+
 ## Overview
 
 The store carries 2,830 SKUs, yet 49.8% of its revenue comes from only three parent SKUs. HMUG is one of the largest contributors and remains heavily concentrated in a single leading variant.
@@ -64,8 +72,8 @@ docs/methodology.md                    Methods, assumptions, and limitations
 Clone the repository and enter its directory:
 
 ```bash
-git clone https://github.com/ababilkhoerulimam/stock-keeping-unit-data-analyst.git
-cd stock-keeping-unit-data-analyst
+git clone https://github.com/ababilkhoerulimam/sku-variant-analysis.git
+cd sku-variant-analysis
 ```
 
 Create a virtual environment:
@@ -105,14 +113,6 @@ The notebook can also be launched from the `notebooks` directory because its sou
 - [Analysis notebook](notebooks/sku_variant_analysis.ipynb)
 - [Recommendation presentation](reports/sku_variant_recommendation.pdf)
 - [Methodology and limitations](docs/methodology.md)
-
-## Tech Stack
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626.svg?style=for-the-badge&logo=Jupyter&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib&logoColor=black)
 
 ## Limitations
 
