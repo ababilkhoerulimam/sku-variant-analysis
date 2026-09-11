@@ -1,6 +1,6 @@
 <div align="center">
   <h1>SKU Variant Analysis</h1>
-  <p><strong>Memilih tiga varian HMUG untuk diuji sebagai listing mandiri</strong></p>
+  <p><strong>Selecting three HMUG variants for standalone listing tests</strong></p>
 
   <p align="center">
     <img src="https://img.shields.io/badge/Domain-E--commerce-0D47A1?style=flat-square" alt="Domain E-commerce">
@@ -9,102 +9,102 @@
   </p>
 
   <p align="center">
-    Analisis penjualan Juni hingga Agustus 2026 untuk mengurangi ketergantungan katalog pada satu SKU induk. Proyek ini mencakup audit kualitas data, rekonsiliasi angka berulang, ranking kandidat, sensitivity analysis, dan rekomendasi bisnis.
+    A June to August 2026 sales analysis designed to reduce catalog dependence on a single parent SKU. The project covers data quality auditing, duplicate-value reconciliation, candidate ranking, sensitivity analysis, and business recommendations.
   </p>
 </div>
 
-## Ringkasan
+## Overview
 
-Toko memiliki 2.830 SKU, tetapi 49,8% omzet berasal dari tiga SKU induk. HMUG merupakan salah satu kontributor terbesar dan masih terkonsentrasi pada satu varian utama.
+The store carries 2,830 SKUs, yet 49.8% of its revenue comes from only three parent SKUs. HMUG is one of the largest contributors and remains heavily concentrated in a single leading variant.
 
-Tujuan analisis ini adalah memilih minimal tiga varian HMUG yang memiliki bukti penjualan paling kuat untuk diprioritaskan dalam uji listing mandiri. Listing mandiri berarti setiap varian memperoleh halaman produk sendiri agar performa, stok, iklan, dan promonya lebih mudah dievaluasi.
+This analysis identifies at least three HMUG variants with the strongest sales evidence for standalone listing tests. A standalone listing gives each variant its own product page so its performance, inventory, advertising, and promotions can be evaluated independently.
 
-## Temuan Utama
+## Key Findings
 
-- Total omzet toko selama tiga bulan mencapai Rp816.449.942.
-- Total mentah varian HMUG sebesar Rp259.906.900 mengandung kelebihan pencatatan Rp82.201.479.
-- Setelah setiap kelompok angka identik dihitung satu kali, omzet HMUG direkonsiliasi menjadi Rp177.705.421 dengan selisih Rp0 pada setiap bulan.
-- Dari 38 varian HMUG, 25 berstatus Normal dan 8 memenuhi seluruh syarat kandidat.
-- A01/01 dan C01/03 masuk tiga besar pada seluruh enam pengujian ketahanan.
-- D02/01 masuk tiga besar pada empat dari enam pengujian dan dipertahankan karena omzetnya dapat dikonfirmasi sepenuhnya.
+- Total store revenue over the three-month period was Rp816,449,942.
+- Raw HMUG variant records totaled Rp259,906,900 and contained Rp82,201,479 in excess duplicated values.
+- After counting each identical value group once, HMUG revenue reconciled to Rp177,705,421 with a monthly difference of Rp0.
+- Of 38 HMUG variants, 25 had `Normal` status and 8 met every candidate requirement.
+- A01/01 and C01/03 ranked in the top three across all six robustness tests.
+- D02/01 ranked in the top three in four of six tests and was retained because its revenue was fully attributable.
 
-## Rekomendasi
+## Recommendations
 
-| Prioritas | Varian | Omzet terkonfirmasi | Unit | Ketahanan |
+| Priority | Variant | Confirmed revenue | Units | Robustness |
 |---:|---|---:|---:|---:|
-| 1 | A01/01 | Rp94.297.119 | 629 | 6 dari 6 uji |
-| 2 | C01/03 | Rp12.827.862 | 71 | 6 dari 6 uji |
-| 3 | D02/01 | Rp8.446.915 | 44 | 4 dari 6 uji |
+| 1 | A01/01 | Rp94,297,119 | 629 | 6 of 6 tests |
+| 2 | C01/03 | Rp12,827,862 | 71 | 6 of 6 tests |
+| 3 | D02/01 | Rp8,446,915 | 44 | 4 of 6 tests |
 
-Rekomendasi ini adalah prioritas untuk pengujian listing mandiri, bukan jaminan kenaikan omzet. Dampak aktual perlu diukur melalui pilot atau eksperimen terkontrol.
+These recommendations are priorities for standalone listing tests, not guarantees of additional revenue. Actual impact must be measured through a pilot or controlled experiment.
 
-## Metode
+## Method
 
-1. Memeriksa struktur workbook, tipe data, nilai kosong, duplikasi kunci, status varian, dan konsistensi total.
-2. Mengidentifikasi kelompok penjualan dan unit yang berulang persis pada beberapa varian.
-3. Menggunakan pendekatan konservatif dengan tidak mengkreditkan omzet ambigu kepada kandidat utama.
-4. Menyaring kandidat yang berstatus Normal, memiliki atribusi penuh, dan terjual pada ketiga bulan.
-5. Meranking kandidat berdasarkan omzet, unit, median omzet bulanan, dan omzet pada bulan terlemah.
-6. Menguji ketahanan melalui tiga skenario atribusi dan tiga pengujian leave-one-month-out.
-7. Mengevaluasi perubahan konsentrasi katalog dan skenario dampak tanpa menganggapnya sebagai forecast.
+1. Audit workbook structure, data types, missing values, key duplication, variant status, and total consistency.
+2. Identify sales and unit combinations repeated exactly across multiple variants.
+3. Apply a conservative attribution rule that does not credit ambiguous revenue to primary candidates.
+4. Retain variants with `Normal` status, fully attributable revenue, and positive sales in all three months.
+5. Rank candidates by revenue, units, median monthly revenue, and weakest-month revenue.
+6. Test robustness through three attribution scenarios and three leave-one-month-out evaluations.
+7. Evaluate catalog concentration and business impact scenarios without presenting them as forecasts.
 
-Penjelasan lebih lengkap tersedia di [dokumen metodologi](docs/methodology.md).
+See the [methodology document](docs/methodology.md) for the complete analytical rationale and limitations.
 
-## Struktur Repository
+## Repository Structure
 
 ```text
-data/raw/                            Workbook sumber
-notebooks/sku_variant_analysis.ipynb Analisis utama dan saved output
-reports/sku_variant_recommendation.pdf Presentasi hasil analisis
-docs/methodology.md                  Metode, asumsi, dan keterbatasan
+data/raw/                              Source workbook
+notebooks/sku_variant_analysis.ipynb   Main analysis and saved outputs
+reports/sku_variant_recommendation.pdf Analysis presentation
+docs/methodology.md                    Methods, assumptions, and limitations
 ```
 
-## Menjalankan Notebook
+## Running the Notebook
 
-Clone repository dan masuk ke direktorinya:
+Clone the repository and enter its directory:
 
 ```bash
 git clone https://github.com/ababilkhoerulimam/stock-keeping-unit-data-analyst.git
 cd stock-keeping-unit-data-analyst
 ```
 
-Buat environment dan instal dependency:
+Create a virtual environment:
 
 ```bash
 python -m venv .venv
 ```
 
-Aktifkan environment pada Windows PowerShell:
+Activate it with Windows PowerShell:
 
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-Pada macOS atau Linux:
+On macOS or Linux:
 
 ```bash
 source .venv/bin/activate
 ```
 
-Kemudian instal dependency:
+Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Jalankan Jupyter dari root repository, kemudian buka `notebooks/sku_variant_analysis.ipynb`:
+Launch Jupyter from the repository root and open `notebooks/sku_variant_analysis.ipynb`:
 
 ```bash
 jupyter lab
 ```
 
-Notebook juga dapat dijalankan langsung dari folder `notebooks` karena pencarian file sumber mendukung kedua working directory.
+The notebook can also be launched from the `notebooks` directory because its source-file lookup supports both working directories.
 
-## Laporan
+## Project Files
 
-- [Notebook analisis](notebooks/sku_variant_analysis.ipynb)
-- [Presentasi rekomendasi](reports/sku_variant_recommendation.pdf)
-- [Metodologi dan keterbatasan](docs/methodology.md)
+- [Analysis notebook](notebooks/sku_variant_analysis.ipynb)
+- [Recommendation presentation](reports/sku_variant_recommendation.pdf)
+- [Methodology and limitations](docs/methodology.md)
 
 ## Tech Stack
 
@@ -114,14 +114,14 @@ Notebook juga dapat dijalankan langsung dari folder `notebooks` karena pencarian
 ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-ffffff?style=for-the-badge&logo=Matplotlib&logoColor=black)
 
-## Keterbatasan
+## Limitations
 
-- Data hanya mencakup tiga bulan dan Agustus tercatat sampai tanggal 28.
-- Tidak tersedia transaction ID untuk menentukan pemilik sebenarnya dari angka varian yang berulang.
-- Data tidak memuat COGS, biaya marketplace, iklan, retur, dan ketersediaan stok.
-- ASP bukan margin dan skenario what-if bukan forecast.
-- Keputusan peluncuran tetap membutuhkan validasi kesiapan stok dan eksperimen bisnis.
+- The dataset covers only three months, and August is recorded through the 28th.
+- No transaction ID is available to identify the true owner of repeated variant values.
+- The data does not include COGS, marketplace fees, advertising spend, returns, or inventory availability.
+- ASP is not a profit margin, and the what-if scenarios are not forecasts.
+- A launch decision still requires inventory-readiness validation and a business experiment.
 
 ## License
 
-Repository ini menggunakan [MIT License](LICENSE).
+This repository is available under the [MIT License](LICENSE).
