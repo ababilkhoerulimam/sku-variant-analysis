@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 venv/
 .env
+node_modules/
 
 .ipynb_checkpoints/
 .pytest_cache/
@@ -17,5 +18,6 @@ Thumbs.db
 .notebook-review/
 submission-audit/
 output/
+outputs/
 cv/
 submission_email_draft.txt
